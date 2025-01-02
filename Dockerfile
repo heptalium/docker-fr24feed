@@ -16,7 +16,7 @@ ARG DIR=rpi_binaries
 
 FROM arch_$TARGETARCH
 RUN apk add --no-cache bash
-ARG FILE=fr24feed_1.0.46-1_$ARCH.tgz
+ARG FILE=fr24feed_1.0.48-0_$ARCH.tgz
 RUN wget https://repo-feed.flightradar24.com/$DIR/$FILE && tar xf $FILE --strip-components=1 -C /usr/bin fr24feed_$ARCH/fr24feed && rm -f $FILE
 CMD ["/usr/bin/fr24feed"]
 EXPOSE 8754
